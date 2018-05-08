@@ -1,0 +1,8 @@
+/home/wd/mapbuilder/build/CMakeFiles/edit_cache.dir
+/home/wd/mapbuilder/build/CMakeFiles/rebuild_cache.dir
+/home/wd/mapbuilder/build/yspng/CMakeFiles/edit_cache.dir
+/home/wd/mapbuilder/build/yspng/CMakeFiles/rebuild_cache.dir
+/home/wd/mapbuilder/build/yspng/CMakeFiles/yspng.dir
+/home/wd/mapbuilder/build/mapbuilder/CMakeFiles/edit_cache.dir
+/home/wd/mapbuilder/build/mapbuilder/CMakeFiles/rebuild_cache.dir
+/home/wd/mapbuilder/build/mapbuilder/CMakeFiles/mapbuilder.dir

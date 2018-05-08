@@ -1,0 +1,2 @@
+/usr/bin/ar qc libyspng.a  CMakeFiles/yspng.dir/yspng.cpp.o CMakeFiles/yspng.dir/yspngenc.cpp.o
+/usr/bin/ranlib libyspng.a

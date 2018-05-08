@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wd/mapbuilder/src/yspng/yspng.cpp
+stdio.h
+-
+yspng.h
+/home/wd/mapbuilder/src/yspng/yspng.h
+
+/home/wd/mapbuilder/src/yspng/yspng.h
+stdio.h
+-
+
+/home/wd/mapbuilder/src/yspng/yspngenc.cpp
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+yspng.h
+/home/wd/mapbuilder/src/yspng/yspng.h
+yspngenc.h
+/home/wd/mapbuilder/src/yspng/yspngenc.h
+
+/home/wd/mapbuilder/src/yspng/yspngenc.h
+

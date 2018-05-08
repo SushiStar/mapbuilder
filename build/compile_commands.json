@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/wd/mapbuilder/build/yspng",
+  "command": "/usr/bin/c++    -I/home/wd/mapbuilder/src/yspng/.  -g   -std=gnu++11 -o CMakeFiles/yspng.dir/yspng.cpp.o -c /home/wd/mapbuilder/src/yspng/yspng.cpp",
+  "file": "/home/wd/mapbuilder/src/yspng/yspng.cpp"
+},
+{
+  "directory": "/home/wd/mapbuilder/build/yspng",
+  "command": "/usr/bin/c++    -I/home/wd/mapbuilder/src/yspng/.  -g   -std=gnu++11 -o CMakeFiles/yspng.dir/yspngenc.cpp.o -c /home/wd/mapbuilder/src/yspng/yspngenc.cpp",
+  "file": "/home/wd/mapbuilder/src/yspng/yspngenc.cpp"
+},
+{
+  "directory": "/home/wd/mapbuilder/build/mapbuilder",
+  "command": "/usr/bin/c++    -I/home/wd/mapbuilder/src/yspng/.  -g   -std=gnu++11 -o CMakeFiles/mapbuilder.dir/mapbuilder.cpp.o -c /home/wd/mapbuilder/src/mapbuilder/mapbuilder.cpp",
+  "file": "/home/wd/mapbuilder/src/mapbuilder/mapbuilder.cpp"
+}
+]
