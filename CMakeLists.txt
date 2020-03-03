@@ -9,5 +9,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
 #add_subdirectory(graphics)
-add_subdirectory(yspng)
-add_subdirectory(mapbuilder)
+add_subdirectory(src/yspng)
+add_subdirectory(src/mapbuilder)
