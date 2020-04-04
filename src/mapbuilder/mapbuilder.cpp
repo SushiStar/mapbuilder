@@ -10,7 +10,7 @@
  * the map background should be black, and values are reversed
  * in claculation.
  *
- * discretization(cells): 3056 1638 
+ * discretization(cells): 3056 1638
  * obsthresh: 254
  * cost_inscribed_thresh: 100
  * cost_possibly_circumscribed_thresh: 30
@@ -31,18 +31,18 @@
  *
  */
 
-#include "yspng.h"
 #include "yspng.cpp"
+#include "yspng.h"
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
 
     YsRawPngDecoder png;
-    int wid,hei;
+    int wid, hei;
     unsigned char *rgba;
     char *inputfilename;
     char *outputfilename;
@@ -50,30 +50,28 @@ int main(int argc, char *argv[]){
     ofstream outputfile;
 
     /* load file*/
-    if(1 == argc){
-        cout<< "input a png file name please.\n";
+    if (1 == argc) {
+        cout << "input a png file name please.\n";
         return 0;
     }
 
-    if(2 == argc){
-        cout<< "input a output file name please.\n";
+    if (2 == argc) {
+        cout << "input a output file name please.\n";
         return 0;
     }
 
     inputfilename = argv[1];
     outputfilename = argv[2];
 
-    if(YSOK != png.Decode(inputfilename)){
-        cout<< "Cannot Opne file.\n";
+    if (YSOK != png.Decode(inputfilename)) {
+        cout << "Cannot Opne file.\n";
         return 0;
     }
-    
 
-    // considering the order of storing the data, 
+    // considering the order of storing the data,
     // there's no need to filp the picture.
 
-    //png.Flip();
-
+    // png.Flip();
 
     wid = png.wid;
     hei = png.hei;
@@ -82,27 +80,35 @@ int main(int argc, char *argv[]){
     // png.rgba is unsigned char with length wid*hei*4
     rgba = png.rgba;
 
-    outputfile<< "discretization(cells): 3056 1638"<<endl;
-    outputfile<< "obsthresh: 254"<<endl;
-    outputfile<< "cost_inscribed_thresh: 100"<<endl;
-    outputfile<< "cost_possibly_circumscribed_thresh: 30"<<endl;
-    outputfile<< "cellsize(meters): 0.025"<<endl;
-    outputfile<< "nominalvel(mpersecs): 1.0"<<endl;
-    outputfile<< "timetoturn45degsinplace(secs): 2.0"<<endl;
-    outputfile<< "start(meters,rads): 0.11 0.11 0"<<endl;
-    outputfile<< "end(meters,rads): 74.0 39.0 0"<<endl;
-    outputfile<< "environment:"<<endl;
+    // outputfile<< "discretization(cells): 3056 1638"<<endl;
+    // outputfile<< "obsthresh: 254"<<endl;
+    // outputfile<< "cost_inscribed_thresh: 100"<<endl;
+    // outputfile<< "cost_possibly_circumscribed_thresh: 30"<<endl;
+    // outputfile<< "cellsize(meters): 0.025"<<endl;
+    // outputfile<< "nominalvel(mpersecs): 1.0"<<endl;
+    // outputfile<< "timetoturn45degsinplace(secs): 2.0"<<endl;
+    // outputfile<< "start(meters,rads): 0.11 0.11 0"<<endl;
+    // outputfile<< "end(meters,rads): 74.0 39.0 0"<<endl;
+    // outputfile<< "environment:"<<endl;
 
-    for(int i = 0; i < hei; ++i){             // row
-        for(int j = 0; j < wid; ++j){         // column
+    for (int i = 0; i < hei; ++i) {     // row
+        for (int j = 0; j < wid; ++j) { // column
 
-            int index = (i*wid + j)*4;
+            int index = (i * wid + j) * 4;
             data = rgba[index] + rgba[index + 1] + rgba[index + 2];
-            data = 255 - data/3.0;
-            if (data > 254) data = 254;
-            outputfile<< (int)data<<" ";
+            data = data/3.0;
+            //data = 255 - data / 3.0;
+            // if (data > 254) data = 254;
+            // outputfile<< (int)data<<" ";
+            if (data > 253.00) {                    // white
+                outputfile << "0,";
+            } else if (data > 5.00) {               // blue
+                outputfile << "20,";
+            } else {                                // black
+                outputfile << "-1,";
+            }
         }
-        outputfile<<endl;
+        outputfile << endl;
     }
 
     outputfile.close();
